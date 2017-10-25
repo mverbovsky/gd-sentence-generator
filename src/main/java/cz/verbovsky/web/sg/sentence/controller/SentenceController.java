@@ -35,7 +35,7 @@ public class SentenceController {
 
     @JsonView(ResourceView.REST.class)
     @RequestMapping(method = RequestMethod.GET, value = "/sentences/{id}")
-    public ResponseEntity<SentenceResource> getWord(@PathVariable("id") String id) {
+    public ResponseEntity<SentenceResource> getSentence(@PathVariable("id") String id) {
         Sentence sentenceRecord = sentenceService.findOneAndIncrementView(id);
 
         if (sentenceRecord == null) {
@@ -47,7 +47,7 @@ public class SentenceController {
 
     @JsonView(ResourceView.YodaTalk.class)
     @RequestMapping(method = RequestMethod.GET, value = "/sentences/{id}/yodaTalk")
-    public ResponseEntity<SentenceResource> getWordYodaTalk(@PathVariable("id") String id) {
+    public ResponseEntity<SentenceResource> getSentenceYodaTalk(@PathVariable("id") String id) {
         Sentence sentenceRecord = sentenceService.findOneAndIncrementView(id);
 
         if (sentenceRecord == null) {
